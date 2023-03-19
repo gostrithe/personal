@@ -6,10 +6,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hello, jack!</title>
+    <style>
+        * {
+            /* border: 1px solid #000; */
+            box-sizing: border-box;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skyblue {
+            background-color: #fff;
+        }
+
+        .radius {
+            border-radius: 8px;
+        }
+
+        .mb8 {
+            margin-bottom: 10px;
+        }
+
+        .mr8 {
+            margin-right: 10px;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: #eee;
+            padding: 14px;
+        }
+
+        .main {
+            flex: 1;
+            overflow: auto;
+        }
+
+        .main article {
+            flex: 2;
+        }
+
+        .main aside {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>you may see me, but i am empty</h1>
+    <!-- 使用HTML5语义元素 -->
+    <header class="skyblue radius mb8">
+        <h1 class="center">you may see me, but i am empty</h1>
+    </header>
+    <nav class="skyblue radius mb8">
+        <p>导航栏</p>
+    </nav>
+    <div class="main flex mb8">
+        <article class="skyblue radius mr8">
+            article独立的内容
+            <div class="center">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+                    <polygon points="100,10 40,180 190,60 10,60 160,180"
+                        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;">
+                </svg>
+            </div>
+            <section>
+                article独立的内容中的一节
+                <div>
+                    search Bing: <input type="search" name="bingsearch">
+                </div>
+            </section>
+        </article>
+        <aside class="skyblue radius">
+            侧边栏
+        </aside>
+    </div>
+    <footer class="center skyblue radius">
+        <p>底部</p>
+    </footer>
 </body>
 
 </html>
