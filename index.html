@@ -12,6 +12,12 @@
             box-sizing: border-box;
         }
 
+        .centerWrapper {
+            width: 960px;
+            /* 980 1000 1200 */
+            margin: 0 auto;
+        }
+
         .flex {
             display: flex;
         }
@@ -64,13 +70,13 @@
 
 <body>
     <!-- 使用HTML5语义元素 -->
-    <header class="skyblue radius mb8">
+    <header class="skyblue radius mb8 centerWrapper">
         <h1 class="center">you may see me, but i am empty</h1>
     </header>
-    <nav class="skyblue radius mb8">
+    <nav class="skyblue radius mb8 centerWrapper">
         <p>导航栏</p>
     </nav>
-    <div class="main flex mb8">
+    <div class="main flex mb8 centerWrapper">
         <article class="skyblue radius mr8">
             article独立的内容
             <div class="center">
@@ -90,7 +96,7 @@
             侧边栏
         </aside>
     </div>
-    <footer class="center skyblue radius">
+    <footer class="center skyblue radius centerWrapper">
         <p>底部</p>
     </footer>
 </body>
