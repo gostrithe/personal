@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hello, jack!</title>
+    <link rel="shortcut icon" href="/imgs/websiteLogo.ico">
     <style>
         * {
             /* border: 1px solid #000; */
@@ -34,6 +35,10 @@
 
         .radius {
             border-radius: 8px;
+            box-shadow:
+                inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                0 0 0 2px rgb(255, 255, 255),
+                0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
         }
 
         .mb8 {
@@ -44,31 +49,93 @@
             margin-right: 10px;
         }
 
+        .mt8 {
+            margin-top: 10px;
+        }
+
+        .ml8 {
+            margin-left: 10px;
+        }
+
         body {
             height: 100vh;
             margin: 0;
             display: flex;
             flex-direction: column;
-            background-color: #eee;
+            /* background-color: #eee; */
+            background-color: rgb(212, 240, 250);
             padding: 14px;
+        }
+
+        header {
+            flex-direction: column;
+            align-items: center;
+            padding: 16px;
+        }
+
+        header h1 {
+            margin-top: 8px;
+            text-shadow: #FC0 1px 0 4px;
+        }
+
+        header img {
+            width: 77px;
+            height: 77px;
+            border-radius: 14%;
+        }
+
+        .ulList {
+            margin: 0;
+            list-style: none;
+        }
+
+        .ulList>li {
+            margin-right: 60px;
+            line-height: 3rem;
+            border: 4px solid rgb(212, 240, 250);
+            background: #fff;
+            padding: 0 12px;
+            border-radius: 1.5rem;
+        }
+
+        .ulList>li:hover {
+            background: rgb(212, 240, 250);
+            /* border: 4px solid #fff; */
+            color: #fff;
         }
 
         .main {
             flex: 1;
-            overflow: auto;
+            overflow: scrollY;
         }
 
         .main article {
-            flex: 2;
+            flex: 3;
         }
 
         .main aside {
-            flex: 1;
+            flex: 2;
         }
 
         @media (max-width: 768px) {
             .centerWrapper {
                 width: 100%;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu {
+                display: block !important;
+            }
+
+            .radius {
+                background: rgb(212, 240, 250);
+            }
+
+            body {
+                background-color: #fafafa;
             }
 
             .main {
@@ -78,46 +145,125 @@
             .main article {
                 margin-right: 0;
                 margin-bottom: 10px;
-                flex: 2;
+                flex: 3;
             }
 
             .main aside {
-                flex: 1;
+                flex: 2;
             }
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .menu .menuBtn {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 22px;
+            height: 26px;
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        .line {
+            position: absolute;
+            width: 14px;
+            height: 2px;
+            background-color: #000;
+            left: 4px;
+        }
+
+        .line1 {
+            top: 6px;
+        }
+
+        .line2 {
+            top: 12px;
+        }
+
+        .line3 {
+            top: 18px;
         }
     </style>
 </head>
 
 <body>
     <!-- 使用HTML5语义元素 -->
-    <header class="skyblue radius mb8 centerWrapper">
-        <h1 class="center">you may see me, but i am empty</h1>
+    <header style="position: relative;" class="flex skyblue radius mb8 centerWrapper">
+        <img src="/imgs/websiteLogo.ico" alt="logo">
+        <h1 class="center">hey, jack!</h1>
+        <div class="menu">
+            <div class="menuBtn">
+                <div class="line line1"></div>
+                <div class="line line2"></div>
+                <div class="line line3"></div>
+            </div>
+        </div>
     </header>
     <nav class="skyblue radius mb8 centerWrapper">
-        <p>导航栏</p>
+        <ul class="ulList flex">
+            <li>contact</li>
+            <li>GitHub</li>
+            <li>about</li>
+        </ul>
     </nav>
     <div class="main flex mb8 centerWrapper">
         <article class="skyblue radius mr8">
-            article独立的内容
-            <div class="center">
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
-                    <polygon points="100,10 40,180 190,60 10,60 160,180"
-                        style="fill: red;stroke:darkred;stroke-width:5;fill-rule:evenodd;">
+            <div class="center" style="justify-content: flex-start; padding-left: 12px;">
+                <svg style="width: 30px;" xmlns="http://www.w3.org/2000/svg" version="1.1" height="19">
+                    <polygon points="10,1 4,18 19,6 1,6 16,18"
+                        style="fill: red;stroke:darkred;stroke-width:1;fill-rule:evenodd;">
                 </svg>
+                <h2>技术栈</h2>
             </div>
             <section>
-                article独立的内容中的一节
-                <div>
-                    search Bing: <input type="search" name="bingsearch">
-                </div>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>LESS</li>
+                    <li>SASS</li>
+                    <li>Vue.js</li>
+                    <li>React.js</li>
+                    <li>TypeScript</li>
+                    <li>uniApp</li>
+                    <li>Taro</li>
+                    <li>Webpack</li>
+                    <li>Vite</li>
+                </ul>
             </section>
         </article>
-        <aside class="skyblue radius">
-            侧边栏
+        <aside class="flex skyblue radius" style="flex-direction: column;">
+            <div class="education mb8" style="padding: 0 4%;">
+                <table border="1" style="width: 100%;">
+                    <caption class="mt8 mb8">-------教育经历-------</caption>
+                    <thead>
+                        <th>学校</th>
+                        <th>专业</th>
+                        <th>时间线</th>
+                    </thead>
+                    <tbody style="font-size: 14px;">
+                        <tr>
+                            <td>广东海洋大学</td>
+                            <td>信息与计算科学</td>
+                            <td>2019.09~2023.06</td>
+                        </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+            <div class="evaluation" style="margin-top: 40px;">
+                <div class="center">-------自我评价-------</div>
+                <p style="text-indent: 2em;">
+                    好人。
+                </p>
+            </div>
         </aside>
     </div>
     <footer class="center skyblue radius centerWrapper">
-        <p>底部</p>
+        <p style="color: lightcyan;">you may see me, but i am empty</p>
     </footer>
 </body>
 
